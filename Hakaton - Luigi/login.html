@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+    body, h1, h2, h3, h4, h5, h6, p, ul, li, form, input, textarea, button {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+    background: #02caf6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Campora;
+    background-attachment: fixed;
+}
+
+    .navbar {
+        background-color: #343a40;
+        width: 100%;
+    }
+
+    .navbar-brand, .nav-link {
+        color: #fff !important;
+    }
+
+    .nav-link.active {
+        color: #ff7f50 !important;
+    }
+
+    .call-to-action {
+        text-align: center;
+        padding: 18px;
+        background-color: #ffffff;
+        color: #02caf6;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .call-to-action h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .call-to-action p {
+        font-size: 1.2em;
+    }
+
+    main {
+        padding: 20px;
+        width: 100%;
+        max-width: 400px;
+        margin-top: 100px;
+    }
+
+    form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    form input[type="text"], form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    form button {
+        background-color: #02caf6;
+        color: #000000;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    form button:hover {
+        background-color: #00acca;
+    }
+
+    .navbar {
+    height: 7%;
+    background: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    color: #0c1b3b;
+}
+
+.iconenavbar {
+    font-size: 40px;
+    margin: 30px;
+    width: 45px;
+    height: 45px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="call-to-action">
+        <h1>Faça seu login!</h1>
+    </div>
+    <main>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required>
+            <a href="register.html">Cadastrar-se</a>
+            <button type="submit">Login</button>
+        </form>
+    </main>
+    <div class="navbar">
+      <img src="inicio.png" class="iconenavbar" onclick="window.location.href='index.html'" />
+      <img src="ruasinterditadas.png" class="iconenavbar"onclick="window.location.href='ruasinterditadas.html'" />
+      <img src="blog.png" class="iconenavbar" onclick="window.location.href='blog.html'"/>
+    <img src="conta.png" class="iconenavbar" onclick="window.location.href='login.html'"/>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>

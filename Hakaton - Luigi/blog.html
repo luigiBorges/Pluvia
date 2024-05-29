@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+      
+body, h1, h2, h3, h4, h5, h6, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background-color: #02caf6;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+main {
+    padding: 20px;
+}
+
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"], form textarea, form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+
+.post h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.post p {
+    margin-bottom: 10px;
+}
+
+.post img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#posts {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.post {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.post h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.post p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.post img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post small {
+    color: #888;
+    display: block;
+    margin-top: 10px;
+}
+
+.post .delete {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
+}
+
+.post .delete:hover {
+    background-color: #c82333;
+}
+
+
+
+
+.navbar {
+    height: 7%;
+    background: white;
+    width: 100%;
+    position: fixed; /* Alteração aqui */
+    bottom: 0; /* Alteração aqui */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+label {
+    color: #0c1b3b;
+}
+
+.iconenavbar {
+    font-size: 40px;
+    margin: 30px;
+    width: 45px;
+    height: 45px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <form id="postForm" class="hidden">
+            <label for="title">Título:</label>
+            <input type="text" id="title" required>
+            <label for="content">Conteúdo:</label>
+            <textarea id="content" required></textarea>
+            <label for="image">Imagem:</label>
+            <input type="file" id="image" accept="image/*">
+            <button type="submit">Postar</button>
+        </form>
+        <section id="posts"></section>
+
+    </main>
+    <div class="navbar">
+      <img src="inicio.png" class="iconenavbar" onclick="window.location.href='index.html'" />
+      <img src="ruasinterditadas.png" class="iconenavbar"onclick="window.location.href='ruasinterditadas.html'" />
+      <img src="blog.png" class="iconenavbar"onclick="window.location.href='blog.html'"/>
+      <img src="conta.png" class="iconenavbar"onclick="window.location.href='login.html'"/>
+    </div>
+    <script src="script.js"></script>
+   </body>
+</html>

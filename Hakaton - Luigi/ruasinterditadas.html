@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Document</title>
+  <style>
+    @font-face {
+    font-family: Campora;
+    src: url("../camporaclassic.ttf");
+}
+
+
+#pagina-inicio {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body {
+    background: radial-gradient(circle,
+            rgba(152, 236, 255, 1) 0%,
+            rgba(2, 202, 246, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Campora;
+    background-attachment: fixed;
+}
+
+i {
+    color: #02caf6;
+}
+
+.infclima {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: absolute;
+    width: 83%;
+    height: 12%;
+    top: 269px;
+    background: linear-gradient(180deg,
+            rgba(239, 252, 255, 1) 1%,
+            rgba(153, 242, 255, 1) 100%);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 27px;
+    border-bottom-left-radius: 27px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    transition: 0.5s;
+}
+
+.container2 {
+    border-radius: 27px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    width: 83%;
+    height: 43%;
+    top: 390px;
+    background: rgba(211, 205, 255, 0.5);
+    background: linear-gradient(180deg,
+            rgba(185, 246, 255, 1) 1%,
+            rgba(153, 242, 255, 1) 100%);
+    transition: 0.5s;
+}
+
+.clima {
+    position: absolute;
+    z-index: 999;
+    width: 210px;
+    height: 150px;
+    top: 110px;
+}
+
+.col {
+    flex: 1;
+}
+
+.col.pequeno {
+    flex: 2;
+    margin: 15px;
+}
+
+.col.grande {
+    flex: 6;
+}
+
+.navbar {
+    height: 7%;
+    background: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    color: #0c1b3b;
+}
+
+.iconenavbar {
+    font-size: 40px;
+    margin: 30px;
+    width: 45px;
+    height: 45px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+img {
+    transition: 0.5s;
+}
+
+img:hover {
+    filter: brightness(110%);
+    transition: 0.5s;
+}
+
+.infclima:hover {
+    filter: brightness(105%);
+    transition: 0.5s;
+}
+
+.container2:hover {
+    filter: brightness(105%);
+    transition: 0.5s;
+}
+
+.informacoes {
+    display: contents;
+}
+  </style>
+</head>
+
+<body id="pagina-inicio">
+  <script>
+    window.onload = function () {
+      document.getElementById("pagina-inicio").style.opacity = 1;
+    };
+  </script>
+  <iframe style="height: 750px"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58277.45710087458!2d-46.71482817381482!3d-24.089498373022884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce2883ba386b79%3A0x211da91fc6c0ccb9!2zTW9uZ2FndcOhLCBTUA!5e0!3m2!1spt-BR!2sbr!4v1716927403294!5m2!1spt-BR!2sbr"
+    width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="navbar">
+    <img src="inicio.png" class="iconenavbar" onclick="window.location.href='index.html'" />
+    <img src="ruasinterditadas.png" class="iconenavbar" onclick="window.location.href='ruasinterditadas.html'" />
+    <img src="blog.png" class="iconenavbar" onclick="window.location.href='blog.html'"/>
+    <img src="conta.png" class="iconenavbar" onclick="window.location.href='login.html'"/>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  
+  <style>
+    @font-face {
+    font-family: Campora;
+    src: url("../camporaclassic.ttf");
+}
+
+#pagina-inicio {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.pesquisa {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+body {
+    background: radial-gradient(circle, rgba(234, 252, 255, 1) 63%, rgba(255, 255, 255, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Campora;
+    background-attachment: fixed;
+}
+
+.cidade {
+    text-align: center;
+    height: 40px;
+    width: 200px;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+    font-size: x-large;
+}
+
+.fundo {
+    background: radial-gradient(circle, rgba(152, 236, 255, 1) 0%, rgba(2, 202, 246, 1) 100%);
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    bottom: 1px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+i {
+    color: #02caf6;
+}
+
+.infclima {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: absolute;
+    width: 83%;
+    height: 12%;
+    top: 269px;
+    background: linear-gradient(180deg, rgba(239, 252, 255, 1) 1%, rgba(153, 242, 255, 1) 100%);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 27px;
+    border-bottom-left-radius: 27px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    transition: 0.5s;
+}
+
+.alertas {
+    border-radius: 27px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    width: 83%;
+    height: 43%;
+    top: 390px;
+    background: rgba(211, 205, 255, 0.5);
+    background: linear-gradient(180deg, rgba(185, 246, 255, 1) 1%, rgba(153, 242, 255, 1) 100%);
+    transition: 0.5s;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.clima {
+    position: absolute;
+    z-index: 999;
+    width: 65%;
+    height: 30%;
+    top: 5%;
+}
+
+.col {
+    flex: 1;
+}
+
+.col.pequeno {
+    flex: 2;
+    margin: 15px;
+}
+
+.navbar {
+    height: 7%;
+    background: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    color: #0c1b3b;
+}
+
+.iconenavbar {
+    font-size: 40px;
+    margin: 30px;
+    width: 45px;
+    height: 45px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+img {
+    transition: 0.5s;
+}
+
+img:hover {
+    filter: brightness(110%);
+    transition: 0.5s;
+}
+
+.infclima:hover {
+    filter: brightness(105%);
+    transition: 0.5s;
+}
+
+.alertas:hover {
+    filter: brightness(105%);
+    transition: 0.5s;
+}
+
+.caixapesquisa:active,
+.caixapesquisa:focus {
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px rgba(2, 202, 246, 0.3);
+}
+
+.informacoes {
+    display: contents;
+}
+
+.vermelho {
+    color: red;
+}
+  </style>
+  <title>Document</title>
+</head>
+
+<body id="pagina-inicio">
+  <label class="cidade" id="city">Mongaguá - SP</label>
+  <img src="" class="clima" id="weather-icon" />
+  <div class="fundo"></div>
+  <div class="informacoes">
+    <div class="infclima" id="weather-data">
+      <div class="col pequeno" style="text-align: center; line-height: 1">
+        <label style="font-weight: bold; font-size: xxx-large" id="temperature"><span></span>&deg;</label>
+        <br />
+        <label id="description"></label>
+      </div>
+      <div class="col pequeno" style="line-height: 1.6; font-size: larger">
+        <label>Vento</label>
+        <br />
+        <label style="font-weight: bold" id="wind"></label>
+      </div>
+      <div class="col pequeno" style="line-height: 1.6; font-size: larger">
+        <label>Umidade</label>
+        <br />
+        <label style="font-weight: bold" id="umidity"></label>
+      </div>
+    </div>
+  </div>
+  <div class="alertas">
+    <div class="col pequeno" style="text-align: center; line-height: 1.5">
+      <label style="font-size: x-large"><i class="fa fa-exclamation-circle vermelho"></i>&nbsp;Rua Santos está
+        alagada!</label>
+      <br />
+      <label style="font-size: x-large"><i class="fa fa-exclamation-circle vermelho"></i>&nbsp;Av. Antônio Francisco
+        Cegarra está interditada!</label>
+      <br />
+      <label style="font-size: x-large"><i class="fa fa-exclamation-circle vermelho"></i>&nbsp;Av. Monteiro Lobato está
+        interditada!</label>
+      <br />
+      <label style="font-size: x-large"><i class="fa fa-exclamation-circle vermelho"></i>&nbsp;Rua Aimorés está
+        alagada!</label>
+    </div>
+  </div>
+  <div class="navbar">
+    <img src="inicio.png" class="iconenavbar" onclick="window.location.href='index.html'" />
+    <img src="ruasinterditadas.png" class="iconenavbar"onclick="window.location.href='ruasinterditadas.html'" />
+    <img src="blog.png" class="iconenavbar" onclick="window.location.href='blog.html'"/>
+    <img src="conta.png" class="iconenavbar" onclick="window.location.href='login.html'"/>
+  </div>
+  <script>
+    
+const apiKey = "72f33a98b09ccaa739cea91139a68912";
+const apiUnsplash = "https://source.unsplash.com/1600x900/?";
+
+const cityElement = document.querySelector("#city");
+const tempElement = document.querySelector("#temperature span");
+const descElement = document.querySelector("#description");
+const weatherIconElement = document.querySelector("#weather-icon");
+const umidityElement = document.querySelector("#umidity");
+const windElement = document.querySelector("#wind");
+
+const weatherContainer = document.querySelector("#weather-data");
+
+const getWeatherData = async (city) => {
+  const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
+  try {
+    const res = await fetch(apiWeatherURL);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Erro ao obter dados do clima:", error);
+  }
+};
+
+const showWeatherData = async (city) => {
+  const data = await getWeatherData(city);
+  if (!data || data.cod === "404") {
+    console.error("Erro ao obter dados do clima: Cidade não encontrada.");
+    return;
+  }
+  tempElement.innerText = parseInt(data.main.temp);
+  descElement.innerText = data.weather[0].description;
+  weatherIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`
+  );
+  umidityElement.innerText = `${data.main.humidity}%`;
+  windElement.innerText = `${data.wind.speed} km/h`;
+  weatherContainer.classList.remove("hide");
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  showWeatherData("Mongaguá");
+});
+window.onload = function () {
+  document.getElementById("pagina-inicio").style.opacity = 1;
+};
+  </script>
+</body>
+
+</html>
